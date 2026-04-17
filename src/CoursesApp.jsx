@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import jsCourse from './data/jsCourse.js'
+import jsCourse  from './data/jsCourse.js'
+import oopCourse from './data/oopCourse.js'
 
-const COURSES = [jsCourse]
+const COURSES = [jsCourse, oopCourse]
 const OPTION_LABELS = ['A', 'B', 'C', 'D']
 
 // ── Helpers ────────────────────────────────────────────────────────────────────

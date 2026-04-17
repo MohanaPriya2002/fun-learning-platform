@@ -63,7 +63,7 @@ function HomeScreen({ onQuiz, onCourses, theme, onTheme, user, onSignOut }) {
             <div className="home-card-body">
               <span className="home-card-name">Courses</span>
               <span className="home-card-desc">Step-by-step lessons from zero — JS variables, loops, functions & more</span>
-              <span className="home-card-meta">5 modules · 14 lessons</span>
+              <span className="home-card-meta">2 courses · 32 lessons</span>
             </div>
             <span className="home-card-arrow">→</span>
           </button>
