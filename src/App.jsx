@@ -7,12 +7,12 @@ const INIT_THEME = localStorage.getItem('cq-theme') || 'dark'
 document.documentElement.setAttribute('data-theme', INIT_THEME)
 
 const THEMES = [
-  { id: 'dark',     name: 'Dark',     dot: '#6366f1' },
-  { id: 'light',    name: 'Light',    dot: '#e5e7eb' },
-  { id: 'midnight', name: 'Midnight', dot: '#38bdf8' },
-  { id: 'sunset',   name: 'Sunset',   dot: '#f97316' },
-  { id: 'forest',   name: 'Forest',   dot: '#4ade80' },
-  { id: 'candy',    name: 'Candy',    dot: '#e879f9' },
+  { id: 'dark',     name: 'Dark',     dot: 'linear-gradient(135deg,#818cf8,#c084fc)' },
+  { id: 'light',    name: 'Light',    dot: 'linear-gradient(135deg,#3852B4,#6366f1)' },
+  { id: 'coral',    name: 'Coral',    dot: 'linear-gradient(135deg,#FF5A5A,#ff8fa3)' },
+  { id: 'blush',    name: 'Blush',    dot: 'linear-gradient(135deg,#FFCEE3,#FF5A5A)' },
+  { id: 'ocean',    name: 'Ocean',    dot: 'linear-gradient(135deg,#3852B4,#38bdf8)' },
+  { id: 'midnight', name: 'Night',    dot: 'linear-gradient(135deg,#38bdf8,#818cf8)' },
 ]
 
 function ThemePicker({ current, onChange }) {
@@ -27,7 +27,10 @@ function ThemePicker({ current, onChange }) {
             style={{ '--dot': t.dot }}
             onClick={() => onChange(t.id)}
             title={t.name}
-          />
+          >
+            <span className="tp-dot" />
+            <span className="tp-name">{t.name}</span>
+          </button>
         ))}
       </div>
     </div>
