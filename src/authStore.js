@@ -20,7 +20,12 @@ function makeSession(userId) {
   return { userId, token: crypto.randomUUID(), at: Date.now() }
 }
 
-function sanitize({ password, mfaSecret, ...safe }) { return safe }
+function sanitize(user) {
+  const safe = { ...user }
+  delete safe.password
+  delete safe.mfaSecret
+  return safe
+}
 
 export function getSession() {
   const { session, users } = load()

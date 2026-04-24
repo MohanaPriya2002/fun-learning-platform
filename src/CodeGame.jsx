@@ -363,12 +363,14 @@ export default function CodeGame({ onHome }) {
   useEffect(() => {
     if (screen !== 'playing' || selected !== null) return
     if (timer === 0) {
-      setSelected(-1)
-      setShowExp(true)
-      setLives(l => l - 1)
-      setStreak(0)
-      setEarnedXP(0)
-      return
+      const id = setTimeout(() => {
+        setSelected(-1)
+        setShowExp(true)
+        setLives(l => l - 1)
+        setStreak(0)
+        setEarnedXP(0)
+      }, 0)
+      return () => clearTimeout(id)
     }
     const id = setTimeout(() => setTimer(t => t - 1), 1000)
     return () => clearTimeout(id)
